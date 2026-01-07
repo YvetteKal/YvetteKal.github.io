@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yvette Kalimumbalo - Bioinformatics Researcher & AI Engineer specializing in Machine Learning for Healthcare">
+    <meta name="keywords" content="Bioinformatics, Machine Learning, AI, Healthcare, Computational Biology">
+    <meta name="author" content="Yvette Kalimumbalo">
+    <title>Yvette Kalimumbalo | Bioinformatics & AI Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #e5e7eb;
+            background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #c084fc 0%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #c084fc;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #d1d5db;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 1rem 5rem;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #c084fc 0%, #f472b6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            color: #d8b4fe;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            max-width: 48rem;
+            margin: 0 auto 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-links a {
+            padding: 0.75rem;
+            background: #9333ea;
+            border-radius: 50%;
+            display: inline-flex;
+            transition: background 0.3s;
+            color: white;
+        }
+
+        .social-links a:hover {
+            background: #7c3aed;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+            color: #c084fc;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 1rem;
+        }
+
+        .bg-dark {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 3rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: translateY(-4px);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            color: #c084fc;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .text-purple {
+            color: #d8b4fe;
+        }
+
+        .text-gray {
+            color: #9ca3af;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(147, 51, 234, 0.3);
+            color: #d8b4fe;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(147, 51, 234, 0.2);
+            color: #d8b4fe;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            margin: 0.25rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            color: #d1d5db;
+        }
+
+        ul li::before {
+            content: "▸";
+            color: #c084fc;
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #9333ea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #7c3aed;
+        }
+
+        .btn-secondary {
+            background: #334155;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        footer {
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #9ca3af;
+            border-top: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .publication-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .publication-content {
+            flex: 1;
+        }
+
+        .award-badge {
+            background: rgba(168, 85, 247, 0.2);
+            color: #d8b4fe;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem;
+                border-top: 1px solid rgba(168, 85, 247, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.75rem;
+                border-radius: 0.375rem;
+            }
+
+            .nav-links a:hover {
+                background: rgba(147, 51, 234, 0.1);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            h2 {
+                font-size: 1.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Yvette Kalimumbalo</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i data-lucide="menu" width="24" height="24"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="avatar">YK</div>
+            <h1>Yvette Kalimumbalo</h1>
+            <p class="subtitle">Bioinformatics Researcher & AI Engineer</p>
+            <p class="description">
+                MSc in Bioinformatics | Specializing in Machine Learning for Healthcare | 
+                Deep Learning & Computational Biology
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/YvetteKal" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i data-lucide="github" width="24" height="24"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/yvette-kalimumbalo-1a22a5191/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" width="24" height="24"></i>
+                </a>
+                <a href="mailto:yvettekalimumbalo@gmail.com" aria-label="Email">
+                    <i data-lucide="mail" width="24" height="24"></i>
+                </a>
+            </div>
+            <div class="scroll-indicator" onclick="scrollToSection('about')">
+                <i data-lucide="chevron-down" width="32" height="32"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-dark">
+        <div class="container">
+            <h2>
+                <i data-lucide="user" width="32" height="32"></i>
+                About Me
+            </h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="section-title">
+                        <i data-lucide="graduation-cap" width="24" height="24"></i>
+                        Education
+                    </h3>
+                    <div style="margin-bottom: 2rem;">
+                        <h4>Master of Science in Bioinformatics</h4>
+                        <p class="text-gray">University of Nairobi, Kenya</p>
+                        <p class="text-gray">2021 - 2024</p>
+                        <div class="award-badge">🏆 Best student in department for M.Sc. Programs, 2022-2023</div>
+                    </div>
+                    <div>
+                        <h4>Bachelor of Science in Computer Engineering</h4>
+                        <p class="text-gray">Université Libre des Pays des Grands Lacs, DR Congo</p>
+                        <p class="text-gray">2014 - 2020</p>
+                        <div class="award-badge">🏆 Rawji Award - Top 3 university student (80.2/100)</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="section-title">
+                        <i data-lucide="award" width="24" height="24"></i>
+                        Research Interests
+                    </h3>
+                    <ul>
+                        <li>Computational Biology & Bioinformatics</li>
+                        <li>Machine Learning for Healthcare</li>
+                        <li>Metagenomics & Microbiome Analysis</li>
+                        <li>Functional Genomics & Transcriptomics</li>
+                        <li>Generative Models (GANs) for Data Augmentation</li>
+                        <li>Graph-Based Learning & Transfer Learning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="card" style="margin-top: 3rem;">
+                <h3 class="section-title">
+                    <i data-lucide="code" width="24" height="24"></i>
+                    Technical Skills
+                </h3>
+                <div class="skills-grid">
+                    <div>
+                        <h4>Programming</h4>
+                        <div>
+                            <span class="tag">Python</span>
+                            <span class="tag">R</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Bash</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Frameworks & Libraries</h4>
+                        <div>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">Keras</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Bioinformatics</h4>
+                        <div>
+                            <span class="tag">DESeq2</span>
+                            <span class="tag">MEGA</span>
+                            <span class="tag">FastQC</span>
+                            <span class="tag">MultiQC</span>
+                            <span class="tag">MetaPhlAn</span>
+                            <span class="tag">Krona</span>
+                            <span class="tag">Bioconductor</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Tools & Platforms</h4>
+                        <div>
+                            <span class="tag">Git</span>
+                            <span class="tag">GitHub</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">Google Colab</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Machine Learning</h4>
+                        <div>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">GANs</span>
+                            <span class="tag">Transfer Learning</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">NLP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <div class="container">
+            <h2>
+                <i data-lucide="book-open" width="32" height="32"></i>
+                Publications & Research
+            </h2>
+            <p style="text-align: center; color: #d1d5db; margin-bottom: 3rem;">
+                Dedicated to advancing technology in healthcare through computational research
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="card">
+                    <div class="publication-card">
+                        <div class="publication-content">
+                            <span class="badge">Journal Article</span>
+                            <h3>Application of generative adversarial networks on RNASeq data to uncover COVID-19 severity biomarkers</h3>
+                            <p class="text-gray">Kalimumbalo, Y. K., Macharia, R. W., and Wagacha, P.</p>
+                            <p class="text-purple">Advances in Biomarker Science and Technology, Elsevier • January 2025</p>
+                            <p style="color: #d1d5db; margin-top: 0.75rem;">
+                                Identified key biomarkers for COVID-19 severity using GANs and achieved 0.98 AUC in predicting disease severity.
+                            </p>
+                        </div>
+                        <a href="https://github.com/YvetteKal" target="_blank" rel="noopener noreferrer" style="color: #c084fc;">
+                            <i data-lucide="external-link" width="20" height="20"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="publication-card">
+                        <div class="publication-content">
+                            <span class="badge">Conference Paper</span>
+                            <h3>Prognosis of Neonatal Hypoxic-Ischemic Encephalopathy (HIE) Using Multimodal Deep Learning on MRI and EEG</h3>
+                            <p class="text-gray">Kalimumbalo, Y. K., et al.</p>
+                            <p class="text-purple">AUTSYS 2025 (Autonomous Systems Conference) • October 2025</p>
+                            <p style="color: #d1d5db; margin-top: 0.75rem;">
+                                Presented at AUTSYS 2025 in Majorca, Spain. Submitted November 2025.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thesis -->
+            <div class="card" style="margin-top: 3rem;">
+                <h3 class="text-purple">Master's Thesis</h3>
+                <h4>Identification of Biomarkers for determining the severity of SARS-CoV-2 infection using Deep Learning and RNASeq data</h4>
+                <p class="text-gray" style="margin-bottom: 1rem;">
+                    Supervisors: Dr. Rosaline Macharia; Prof. Peter Waiganjo
+                </p>
+                <p style="color: #d1d5db;">
+                    Successfully identified genes involved in inflammatory response and immune regulation as key biomarkers 
+                    correlating with disease severity using GANs for RNASeq analysis. The approach demonstrates that 
+                    GAN-driven analysis is a powerful tool for uncovering biomarkers in infectious diseases.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-dark">
+        <div class="container">
+            <h2>
+                <i data-lucide="code" width="32" height="32"></i>
+                Featured Projects
+            </h2>
+            <p style="text-align: center; color: #d1d5db; margin-bottom: 3rem;">
+                A selection of my technical and research projects
+            </p>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>COVID-19 Biomarker Discovery</h3>
+                    <p style="color: #d1d5db; margin-bottom: 1rem;">
+                        Deep learning pipeline using GANs for biomarker identification from transcriptomic data
+                    </p>
+                    <div style="margin-bottom: 1rem;">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">GANs</span>
+                        <span class="tag">RNASeq</span>
+                    </div>
+                    <a href="https://github.com/YvetteKal" target="_blank" rel="noopener noreferrer" style="color: #c084fc; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <i data-lucide="github" width="16" height="16"></i>
+                        View on GitHub
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>Differential Expression Analysis</h3>
+                    <p style="color: #d1d5db; margin-bottom: 1rem;">
+                        RNA-seq differential expression analysis pipeline using DESeq2
+                    </p>
+                    <div style="margin-bottom: 1rem;">
+                        <span class="tag">R</span>
+                        <span class="tag">DESeq2</span>
+                        <span class="tag">Bioconductor</span>
+                    </div>
+                    <a href="https://github.com/YvetteKal/differential-expression-analysis-deseq2" target="_blank" rel="noopener noreferrer" style="color: #c084fc; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <i data-lucide="github" width="16" height="16"></i>
+                        View on GitHub
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>Face Detection System</h3>
+                    <p style="color: #d1d5db; margin-bottom: 1rem;">
+                        Real-time face detection application using OpenCV
+                    </p>
+                    <div style="margin-bottom: 1rem;">
+                        <span class="tag">Python</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
+                    <a href="https://github.com/YvetteKal/face-detection-opencv1" target="_blank" rel="noopener noreferrer" style="color: #c084fc; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <i data-lucide="github" width="16" height="16"></i>
+                        View on GitHub
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>Heart Failure Prediction</h3>
+                    <p style="color: #d1d5db; margin-bottom: 1rem;">
+                        ML model for predicting heart failure risk using clinical data
+                    </p>
+                    <div style="margin-bottom: 1rem;">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Scikit-learn</span>
+                    </div>
+                    <a href="https://github.com/YvetteKal/heart-failure-prediction" target="_blank" rel="noopener noreferrer" style="color: #c084fc; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <i data-lucide="github" width="16" height="16"></i>
+                        View on GitHub
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>RNA-Seq Pipeline</h3>
+                    <p style="color: #d1d5db; margin-bottom: 1rem;">
+                        Automated pipeline for RNA-seq data processing and analysis
+                    </p>
+                    <div style="margin-bottom: 1rem;">
+                        <span class="tag">Shell</span>
+                        <span class="tag">Bioinformatics</span>
+                        <span class="tag">NGS</span>
+                    </div>
+                    <a href="https://github.com/YvetteKal/rna-seq-pipeline" target="_blank" rel="noopener noreferrer" style="color: #c084fc; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <i data-lucide="github" width="16" height="16"></i>
+                        View on GitHub
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>Fast Food Ordering System</h3>
+                    <p style="color: #d1d5db; margin-bottom: 1rem;">
+                        Frontend application for fast-food orders management
+                    </p>
+                    <div style="margin-bottom: 1rem;">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                    </div>
+                    <a href="https://github.com/YvetteKal/Fast-Food-Fast" target="_blank" rel="noopener noreferrer" style="color: #c084fc; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <i data-lucide="github" width="16" height="16"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>
+                <i data-lucide="briefcase" width="32" height="32"></i>
+                Professional Experience
+            </h2>
+
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div class="card">
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <h3>IT Support Assistant</h3>
+                            <p class="text-purple" style="font-size: 1.125rem;">United Nations Environment Program (UNEP)</p>
+                            <p class="text-gray">Nairobi, Kenya</p>
+                        </div>
+                        <span class="text-gray">November 2025 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Supporting digital infrastructure for UNEA-7, the world's highest-level environmental decision-making body</li>
+                        <li>Managing registration systems, delegate badges, and connectivity for international sessions</li>
+                        <li>Facilitating seamless interaction between in-person and remote participants</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <h3>Visiting Teaching Assistant</h3>
+                            <p class="text-purple" style="font-size: 1.125rem;">Université Libre des Pays des Grands Lacs (ULPGL)</p>
+                            <p class="text-gray">Goma, DR Congo</p>
+                        </div>
+                        <span class="text-gray">April 2022 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Teaching courses: Linux, Computer Security, Java Programming, Web Technologies</li>
+                        <li>Co-supervised 6+ undergraduate final-year
